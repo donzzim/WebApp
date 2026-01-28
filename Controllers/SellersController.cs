@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SalesApp.Models;
+using SalesApp.Models.ViewModels;
 using SalesApp.Services;
 
 namespace SalesApp.Controllers;
@@ -7,10 +8,12 @@ namespace SalesApp.Controllers;
 public class SellersController : Controller
 {
     private readonly SellerService _sellerService;
+    private readonly DepartmentService _departmentService;
 
-    public SellersController(SellerService sellerService)
+    public SellersController(SellerService sellerService, DepartmentService departmentService)
     {
         _sellerService = sellerService;
+        _departmentService = departmentService;
     }
 
     // GET
@@ -22,6 +25,8 @@ public class SellersController : Controller
 
     public IActionResult Create()
     {
+        var departments = _departmentService.FindAll();
+        var viewModel = new SellerFormViewModel { Departments =  departments };
         return View();
     }
 

@@ -19,6 +19,7 @@ builder.Services.AddDbContext<SalesAppContext>(options =>
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<SeedingService>();
 builder.Services.AddScoped<SellerService>();
+builder.Services.AddScoped<DepartmentService>();
 
 var app = builder.Build();
 
