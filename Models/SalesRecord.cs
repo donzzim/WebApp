@@ -1,12 +1,18 @@
-﻿using SalesApp.Models.Enums;
+﻿using System.ComponentModel.DataAnnotations;
+using SalesApp.Models.Enums;
 
 namespace SalesApp.Models;
 
 public class SalesRecord
 {
     public int  Id { get; set; }
+
+    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
     public DateTime Date { get; set; }
+
+    [DisplayFormat(DataFormatString = "{0:F2}", ApplyFormatInEditMode = true)]
     public double Amount { get; set; }
+
     public SaleStatus Status { get; set; }
     public Seller Seller { get; set; }
 
