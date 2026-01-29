@@ -1,0 +1,18 @@
+﻿## Build results
+[Bb]in/
+[Oo]bj/
+
+## Visual Studio
+.vs/
+
+## Rider / JetBrains
+.idea/
+*.sln.iml
+
+## User-specific files
+*.user
+*.suo
+
+## OS
+.DS_Store
+Thumbs.db
